@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>This is the website title</title>
+  <meta name="description" content="This is the website description">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIElEQVR42mNgGAWDDfwnEo4aMGrAqAGjBowEA0bBwAAARraOgF2Dq4IAAAAASUVORK5CYII=">
+  <style type="text/css">
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  
+  --text-color: #000;
+  --back-color: #fff;
+  --link-color: blue;
+  
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --text-color: #fff;
+    --back-color: #000;
+  }
+}
+
+body {
+  font: 18px / 1.45 system-ui, sans-serif;
+  color: var(--text-color);
+  background: var(--back-color);
+  position: relative;
+  max-width: 45em; /* column width */
+  margin: 0 auto;
+}
+
+/* :target trick */
+
+section, section:target ~ section:last-of-type {
+  display: none;
+  padding: calc(5vw + 3.4em) 4vw 2.1em;
+}
+section:target, section:last-of-type {
+  display: inherit;
+}
+
+/* Vertical spacing */
+
+section * + * {
+  margin-top: .8em;
+}
+
+/* Header */
+
+header {
+  padding: 5vw 4vw 0 4vw;
+  position: absolute;
+  width: 100%;
+}
+
+/* Footer */
+
+footer {
+  padding: 0 4vw 5vw 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer * + * {
+  margin-top: 0;
+}
+
+/* Table of contents */
+
+ul.toc {
+  overflow: hidden;
+}
+
+ul.toc * + * {
+  margin: 0;
+}
+
+ul.toc li {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+}
+
+ul.toc li + li {
+  margin: .25em 0 0 0;
+}
+
+ul.toc li a {
+  color: currentColor;
+  flex: 1;
+}
+
+ul.toc li a:hover {
+  color: var(--link-color);
+}
+
+ul.toc li a span {
+  background: var(--back-color);
+  padding-right: .3em;
+}
+
+ul.toc li a:after {
+  width: 100%;
+  font-size: .55em;
+  position: absolute;
+  bottom: .4em;
+  white-space: nowrap;
+  content:
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .';
+}
+
+ul.toc li time {
+  font-variant-numeric: tabular-nums;
+  z-index: 1;
+  padding-left:.3em;
+  background: var(--back-color);
+}
+
+/* General */
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a[href*="//"]:after, a[href^="mailto:"]:after {
+  font-size: .8em;
+  content: "\2197"; /* top right arrow: ↗ */
+}
+
+/* Headings */
+
+header h1 a {
+  font-weight: normal;
+  display: block;
+}
+
+section h1 {
+  margin-bottom: 1.2em;
+}
+
+h1, h2, h3, h4, strong, b, dt {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+* + h2, * + h3, * + h4 {
+  margin-top: 1.4em;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .9em;
+  font-weight: normal;
+}
+
+/* Lists */
+
+ul {
+  list-style-type: none;
+}
+
+ul li::marker {
+  content: "-  ";
+}
+
+li, dd {
+  margin-left: 1.25em;
+}
+
+li + li, li ol, li ul {
+  margin-top: .2em;
+}
+
+.footnotes li {
+  margin-top:.5em;
+  max-width:95%;
+}
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+  min-height:6em;
+  height: auto;
+  position: relative;
+}
+
+img:after { /* style offline images */
+  content: attr(alt);
+  display: grid;
+  align-content:center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: .8em;
+  text-align: center;
+  border:1px dashed;
+  background-color: var(--back-color);
+}
+
+figure {
+  padding: 1em;
+}
+
+figcaption, small, .footnotes {
+  font-size: .865em;
+}
+
+/* Other elements */
+
+blockquote {
+  padding-left: 1em;
+  border-left:1px dotted;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}
+
+a abbr[title] {
+  cursor: pointer;
+  color: inherit;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid;
+  opacity: .1;
+  margin: 1.4em 0;
+}
+
+sup {
+  line-height: 1;
+  font-size: .75em;
+}
+
+code, kbd {
+  font-family: ui-monospace, SF Mono, Andale Mono, monospace;
+  font-size: .95em;
+  opacity: .6;
+  overflow-wrap: break-word;
+}
+
+kbd {
+  box-shadow:0 .5px 1px;
+  border-radius:2px;
+  padding:.1em .325em .075em .325em;
+  font-size:.95em;
+  margin: 0 .1em;
+}
+
+pre {
+  line-height: 1.55;
+  overflow: auto;
+  padding: .5em .85em .6em .85em;
+  background: rgba(0,0,0,.025);  
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+pre code {
+  position: relative;
+  display:block;
+}
+
+pre code:after {
+  content: attr(class);
+  position: absolute;
+  right: -.6em;
+  top: -.3em;
+  text-transform: uppercase;
+  font-size: .7em;
+  opacity:.6;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+thead {
+  text-align: left;
+  border-bottom: 1px solid;
+}
+
+th, td {
+  padding: .35em 0;
+}
+
+/* Disable footnotes #links */
+
+sup a {
+  color: currentColor;
+  pointer-events: none;
+}
+
+a.footnote-backref {
+  display: none;
+}
+
+/* Print */
+
+@media print {
+  
+  header, section {
+    position: relative; /* print all pages */
+  }
+  
+  section {
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: block;
+    padding: 2em 4vw;
+  }
+
+  section * {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  footer {
+    display: none;
+  }
+  
+}
+
+/* Smaller screens */
+
+@media only screen and (max-width: 400px) {
+  body {font-size: 17px;}
+  footer {display: block;}
+  a:hover {text-decoration:none;}
+  ul.toc li {margin:0;}
+  ul.toc li a {padding:0 0 .5em 0;}
+  ul.toc li a:after, ul.toc time {display:none;}
+}  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="#top">This is the website title</a>
+    </h1>
+  </header>
+  <main>
+    <section id="top">
+      <ul class="toc">
+        <li><a href="#2021-01-11-hello-world"><span> Hello, World!
+</span></a> <time datetime="2021-01-11">2021-01-11</time></li><li><a href="#2021-01-10-markdown-help"><span> Markdown help
+</span></a> <time datetime="2021-01-10">2021-01-10</time></li>      </ul>
+    </section>
+    <section id="about" role="document" aria-label="About"><p>This <abbr title="Hyper Text Markup Language">HTML</abbr> page was generated by <a href="https://github.com/cadars/portable-php">portable-php</a>.</p></section>    <section role="document" aria-label=" Hello, World!
+" id="2021-01-11-hello-world"><h1>Hello, World!</h1>
+<p>A <strong>"Hello, World!" program</strong> generally is a <a href="https://en.wikipedia.org/wiki/Computer_program" title="Computer program">computer program</a> that outputs or displays the message "Hello, World!". Such a program is very simple in most <a href="https://en.wikipedia.org/wiki/Programming_language" title="Programming language">programming languages</a>, and is often used to illustrate the basic <a href="https://en.wikipedia.org/wiki/Syntax" title="Syntax">syntax</a> of a programming language. It is often the first program written by people learning to code.<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref">1</a></sup>  It can also be used as a <a href="https://en.wikipedia.org/wiki/Sanity_test" title="Sanity test">sanity test</a> to make sure that a computer language is correctly installed, and that the operator understands how to use it.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p>James A Langbridge (3 December 2013). <a href="https://books.google.com/books?id=y51NAgAAQBAJ&amp;pg=PA74"><em>Professional Embedded ARM Development</em></a>. <a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="https://en.wikipedia.org/wiki/Special:BookSources/9781118887820" title="Special:BookSources/9781118887820">9781118887820</a>.&#160;<a href="#fnref1:1" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></section><section role="document" aria-label=" Markdown help
+" id="2021-01-10-markdown-help"><h1><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> help</h1>
+<p>On top of regular <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr>, <a href="https://michelf.ca/projects/php-markdown/extra"><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> Extra</a> adds support for footnotes, abbreviations, definition lists, tables, <code>class</code> and <code>id</code> attributes, fenced code blocks, and <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> inside <abbr title="Hypertext Markup Language">HTML</abbr> blocks.</p>
+<p>Additionally, the <code>loading="lazy"</code> attribute is automatically added to images, you can specify the images dimensions, and they are properly enclosed in a figure element. (with optional figcaption)</p>
+<hr />
+<p>Text can be <strong>bold</strong>, <em>italic</em>,  this is a <a href="#2021-01-11-hello-world">link</a>, this is an <a href="https://example.com">external link</a>, this is <code>some code</code>.</p>
+<blockquote>
+<p>This text is in a blockquote.</p>
+</blockquote>
+<figure><img src="img/image.png" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy" /><figcaption>This is the image caption (line begins with a space)</figcaption>
+</figure>
+<h2>This is a level 2 heading</h2>
+<h3>This is a level 3 heading</h3>
+<ul>
+<li>This is</li>
+<li>a normal list</li>
+</ul>
+<ol>
+<li>This is</li>
+<li>an ordered list</li>
+</ol>
+<pre><code class="txt">This is
+    preformatted
+  text.</code></pre>
+<table>
+<thead>
+<tr>
+<th>This is a table header</th>
+<th>Another one</th>
+<th style="text-align: right;">This column is right-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td style="text-align: right;">1234</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td style="text-align: right;">56789</td>
+</tr>
+</tbody>
+</table>
+<p>This sentence has a footnote.<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref">1</a></sup></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is a footnote&#160;<a href="#fnref1:1" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></section>    <section id="home" role="document" aria-label="Home">
+    <ul class="toc">
+      <li><a href="#2021-01-11-hello-world"><span> Hello, World!
+</span></a> <time datetime="2021-01-11">2021-01-11</time></li><li><a href="#2021-01-10-markdown-help"><span> Markdown help
+</span></a> <time datetime="2021-01-10">2021-01-10</time></li>    </ul>
+    </section>
+  </main>
+  <footer>
+    <small>Last updated on January 13, 2021</small> 
+    <small><a href="#about">About</a></small> 
+  </footer>
+<!--  generated by portable-php
+      Wednesday 13th of January 2021 04:10:24 PM      
+      execution time: 0.0067200660705566 seconds -->
+</body>
+</html>
