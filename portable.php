@@ -8,9 +8,9 @@ $site_desc = 'This is the website description';
 $site_style = 'style.css';
 $site_icon = 'img/icon.png';
 
-include('dependencies/parsedown/Parsedown.php');
-include('dependencies/parsedown/ParsedownExtra.php');
-include('dependencies/parsedown/ParsedownExtraPlugin.php');
+include('dependencies/Parsedown.php');
+include('dependencies/ParsedownExtra.php');
+include('dependencies/ParsedownExtraPlugin.php');
 
 function create_slug($string){
   $string = strtolower($string);
