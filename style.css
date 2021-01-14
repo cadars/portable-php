@@ -33,7 +33,8 @@ section, section:target ~ section:last-of-type {
   clip-path: inset(50%);
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
+  top: 0;
 }
 
 section:target, section:last-of-type {

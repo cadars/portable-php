@@ -58,7 +58,7 @@ foreach ($files as $file) {
   <title><?php echo $site_title; ?></title>
   <meta name="description" content="<?php echo $site_desc; ?>">
   <link rel="icon" href="data:image/png;base64,<?php echo base64_encode(file_get_contents($site_icon)); ?>">
-  <style type="text/css">
+  <style>
     <?php echo file_get_contents($site_style); ?>
   </style>
 </head>
