@@ -316,7 +316,7 @@ table {
 
 thead {
   text-align: left;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
 }
 
 th, td {
@@ -376,10 +376,9 @@ a.footnote-backref {
 /* Smaller screens */
 
 @media only screen and (max-width: 400px) {
-  body {font-size: 17px;}
+  body {font-size: 16px;}
   footer {display: block;}
-  a:hover {text-decoration:none;}
-  ul.toc li {margin:0;}
-  ul.toc li a {padding:0 0 .5em 0;}
-  ul.toc li a:after, ul.toc time {display:none;}
+  a:hover {text-decoration: none;}
+  ul.toc li a {padding-bottom: .15em;}
+  ul.toc li a:after, ul.toc time {display: none;}
 }
