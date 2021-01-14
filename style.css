@@ -16,11 +16,11 @@
 }
 
 body {
-  font: 18px / 1.45 system-ui, sans-serif;
+  font: 18.5px / 1.45 system-ui, sans-serif;
   color: var(--text-color);
   background: var(--back-color);
   position: relative;
-  max-width: 45em; /* column width */
+  max-width: 44em; /* column width */
   margin: 0 auto;
 }
 
