@@ -24,17 +24,33 @@ body {
   margin: 0 auto;
 }
 
-/* :target trick */
+/* Show & hide, updated for accessibility */
 
 section, section:target ~ section:last-of-type {
-  display: none;
-  padding: calc(5vw + 3.4em) 4vw 2.1em;
-}
-section:target, section:last-of-type {
-  display: inherit;
+  height: 1px;
+  width: 1px;
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
 }
 
-/* Vertical spacing */
+section:target, section:last-of-type {
+  height: auto;
+  width: auto;
+  clip: inherit; 
+  clip-path: none;
+  overflow: auto;
+  position: relative;
+  white-space: inherit; 
+}
+
+/* Sections */
+
+section {
+  padding: calc(5vw + 3.4em) 4vw 2.1em;
+}
 
 section * + * {
   margin-top: .8em;
@@ -46,6 +62,7 @@ header {
   padding: 5vw 4vw 0 4vw;
   position: absolute;
   width: 100%;
+  z-index: 1;
 }
 
 /* Footer */
