@@ -21,6 +21,6 @@ php portable.php > index.html
 
 - [Parsedown](https://parsedown.org/) converts Markdown to HTML.
 - [ParsedownExtra](https://github.com/erusev/parsedown-extra) adds support for footnotes, abbreviations, definition lists, tables, `class` and `id` attributes, fenced code blocks, and Markdown inside HTML blocks.
-- [ParsedownExtraPlugin](https://github.com/taufik-nurrohman/parsedown-extra-plugin) allows all kinds of custom attributes like `loading="lazy"` for images, adds figure and figcaption elements to images, and more. Can be used for [code highlighting](https://github.com/taufik-nurrohman/parsedown-extra-plugin#custom-code-block-contents).
+- [ParsedownExtraPlugin](https://github.com/taufik-nurrohman/parsedown-extra-plugin) adds the `loading="lazy"` attribute to images, proper figure and figcaption elements, and more. Can be used for [code highlighting](https://github.com/taufik-nurrohman/parsedown-extra-plugin#custom-code-block-contents).
 
 </details>
