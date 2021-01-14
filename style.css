@@ -8,7 +8,7 @@
   --link-color: blue;
   
 }
-@media (prefers-color-scheme: dark) {
+@media only screen and (prefers-color-scheme: dark) {
   * {
     --text-color: #fff;
     --back-color: #000;
@@ -338,11 +338,23 @@ a.footnote-backref {
 
 @media print {
   
-  header, section {
-    position: relative; /* print all pages */
+  * {
+    --back-color: #fff;
+  } 
+  
+  header {
+    position: relative;
   }
   
   section {
+    height: auto;
+    width: auto;
+    clip: inherit; 
+    clip-path: none;
+    overflow: auto;
+    position: relative;
+    white-space: inherit;
+    
     page-break-after: always;
     page-break-inside: avoid;
     break-inside: avoid;
