@@ -16,11 +16,11 @@
 }
 
 body {
-  font: 18.5px / 1.45 system-ui, sans-serif;
+  font: 18px / 1.45 system-ui, sans-serif;
   color: var(--text-color);
   background: var(--back-color);
   position: relative;
-  max-width: 44em; /* column width */
+  max-width: 72ch; /* column width */
   margin: 0 auto;
 }
 
@@ -316,11 +316,11 @@ table {
 
 thead {
   text-align: left;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
 }
 
 th, td {
-  padding: .35em 0;
+  padding: .4em .3em .2em;
 }
 
 /* Disable footnotes #links */
