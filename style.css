@@ -374,7 +374,7 @@ a.footnote-backref {
   footer small:first-of-type {display: none}
   a:hover {text-decoration: none;}
   ul.toc li + li {margin:0;}
-  ul.toc li a {padding-bottom:.45em;}
+  ul.toc li a {padding-bottom:.6em;}
   ul.toc li a:active {font-weight: bold;}
   ul.toc li a:after, ul.toc time {display: none;}
 }
