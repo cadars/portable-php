@@ -1,4 +1,4 @@
-Generates a single-file HTML website from Markdown files.<br>
+Generate a single-file HTML website from Markdown files.<br>
 Demo: https://cadars.github.io/portable-php/
 
 **Requirements:** PHP
