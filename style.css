@@ -370,8 +370,11 @@ a.footnote-backref {
 
 @media only screen and (max-width: 400px) {
   body {font-size: 16px;}
-  footer {display: block;}
+  footer small {font-size: 1em;}
+  footer small:first-of-type {display: none}
   a:hover {text-decoration: none;}
-  ul.toc li a {padding-bottom: .15em;}
+  ul.toc li + li {margin:0;}
+  ul.toc li a {padding-bottom:.45em;}
+  ul.toc li a:active {font-weight: bold;}
   ul.toc li a:after, ul.toc time {display: none;}
 }
