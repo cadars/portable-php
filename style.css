@@ -27,24 +27,17 @@ body {
 /* Show & hide, updated for accessibility */
 
 section, section:target ~ section:last-of-type {
-  height: 1px;
-  width: 1px;
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
+  top: 0;
+  left: -1000vw;
+  height: 0;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap;
-  top: 0;
 }
 
 section:target, section:last-of-type {
   height: auto;
-  width: auto;
-  clip: inherit; 
-  clip-path: none;
-  overflow: auto;
+  left: auto;
   position: relative;
-  white-space: inherit; 
 }
 
 /* Sections */
@@ -114,6 +107,13 @@ ul.toc li a span {
   padding-right: .3em;
 }
 
+ul.toc li time {
+  font-variant-numeric: tabular-nums;
+  z-index: 1;
+  padding-left:.3em;
+  background: var(--back-color);
+}
+
 ul.toc li a:after {
   width: 100%;
   font-size: .55em;
@@ -127,13 +127,6 @@ ul.toc li a:after {
   ' . . . . . . . . . . . . . . . . . . . . . .'
   ' . . . . . . . . . . . . . . . . . . . . . .'
   ' . . . . . . . . . . . . . . . . . . . . . .';
-}
-
-ul.toc li time {
-  font-variant-numeric: tabular-nums;
-  z-index: 1;
-  padding-left:.3em;
-  background: var(--back-color);
 }
 
 /* General */
