@@ -1,7 +1,6 @@
 <?php
-
 // portable-php v.0.1
-// Render each of the Markdown files from a folder in a <section>, with-a-date-and-title as #ID.
+// Render each of the Markdown files from a folder in a <section>, with-a-date-and-title as #id.
 
 $site_title = 'This is the website title';
 $site_desc = 'This is the website description';
@@ -40,7 +39,9 @@ foreach ($files as $file) {
   fclose($file);
     
   $parsedown = new ParsedownExtraPlugin();
+  // Allow single line breaks
   $parsedown->setBreaksEnabled(true);
+  // Add image dimensions, lazy loading and figures
   $parsedown->imageAttributes = ['width', 'height'];
   $parsedown->imageAttributes = ['loading' => 'lazy'];
   $parsedown->figuresEnabled = true;

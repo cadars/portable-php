@@ -8,6 +8,7 @@
   --link-color: blue;
   
 }
+
 @media only screen and (prefers-color-scheme: dark) {
   * {
     --text-color: #fff;
@@ -137,8 +138,8 @@ a {
   overflow-wrap: break-word;
 }
 
-a:hover {
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  a:hover {text-decoration: underline;}
 }
 
 a[href*="//"]:after, a[href^="mailto:"]:after {
@@ -261,7 +262,7 @@ sup {
 }
 
 code, kbd {
-  font-family: ui-monospace, SF Mono, Andale Mono, monospace;
+  font-family: ui-monospace, "SF Mono", Menlo, Andale Mono, monospace;
   font-size: .95em;
   opacity: .6;
   overflow-wrap: break-word;
@@ -369,12 +370,18 @@ a.footnote-backref {
 /* Smaller screens */
 
 @media only screen and (max-width: 400px) {
+  
   body {font-size: 16px;}
   footer small {font-size: 1em;}
-  footer small:first-of-type {display: none}
-  a:hover {text-decoration: none;}
+  blockquote, figure {padding-left: 4vw;padding-right: 4vw;}
   ul.toc li + li {margin:0;}
   ul.toc li a {padding-bottom:.6em;}
   ul.toc li a:active {font-weight: bold;}
-  ul.toc li a:after, ul.toc time {display: none;}
+  footer small:first-of-type, ul.toc li a:after, ul.toc time {
+    left: -1000vw;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  
 }
