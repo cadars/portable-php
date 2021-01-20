@@ -45,6 +45,11 @@ foreach ($files as $file) {
   $parsedown->imageAttributes = ['width', 'height'];
   $parsedown->imageAttributes = ['loading' => 'lazy'];
   $parsedown->figuresEnabled = true;
+  // Remove the id and #links on footnotes
+  $parsedown->footnoteLinkAttributes = function() {return ['href' => '#'];};
+  $parsedown->footnoteReferenceAttributes = function() {return ['id' => null];};
+  $parsedown->footnoteBackLinkAttributes = function() {return ['href' => '#'];};
+  $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
   $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.$filename_no_ext.'">'.$filename_no_ext.'</time></li>';
   $posts .= '<section role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
