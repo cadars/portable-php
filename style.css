@@ -170,14 +170,6 @@ h3 {
 
 /* Lists */
 
-ul {
-  list-style-type: none;
-}
-
-ul li::marker {
-  content: "-  ";
-}
-
 li, dd {
   margin-left: 1.25em;
 }
