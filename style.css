@@ -278,6 +278,7 @@ pre {
 pre code {
   position: relative;
   display:block;
+  overflow-wrap: normal;
 }
 
 pre code:after {
