@@ -1,6 +1,6 @@
 <?php
 // portable-php v.0.1
-// Render each of the Markdown files from a folder in a <section>, with-a-date-and-title as #id.
+// Render each of the Markdown files from a folder in a <section>, with date-and-title as #id.
 
 $site_title = 'This is the website title';
 $site_desc = 'This is the website description';
@@ -81,16 +81,20 @@ foreach ($files as $file) {
   </header>
   <main>
     <section id="top">
-      <ul class="toc">
-        <?php echo $toc; ?>
-      </ul>
+      <nav>
+        <ul class="toc">
+          <?php echo $toc; ?>
+        </ul>
+      </nav>
     </section>
     <?php echo $about; ?>
     <?php echo $posts; ?>
     <section id="home" role="document" aria-label="Home">
-    <ul class="toc">
-      <?php echo $toc; ?>
-    </ul>
+      <nav>
+        <ul class="toc">
+          <?php echo $toc; ?>
+        </ul>
+      </nav>
     </section>
   </main>
   <footer>
