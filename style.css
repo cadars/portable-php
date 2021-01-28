@@ -39,6 +39,12 @@ section:target, section:last-of-type {
   padding: calc(5vw + 3.4em) 4vw 2.1em;
 }
 
+/* tabindex="0" */
+
+section:focus {
+  outline: 0;
+}
+
 /* Vertical spacing */
 
 section * + * {
@@ -175,7 +181,7 @@ li, dd {
 }
 
 li + li, li ol, li ul {
-  margin-top: .2em;
+  margin-top: .1em;
 }
 
 .footnotes li {
@@ -188,7 +194,7 @@ li + li, li ol, li ul {
 img {
   display: block;
   max-width: 100%;
-  min-height:6em;
+  min-height:4em;
   height: auto;
   position: relative;
 }
@@ -203,7 +209,7 @@ img:after { /* style offline images */
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: .8em;
+  font-size: .865em;
   text-align: center;
   border:1px dashed;
   background-color: var(--back-color);
@@ -253,21 +259,19 @@ sup {
 
 code, kbd {
   font-family: ui-monospace, "SF Mono", Menlo, Andale Mono, monospace;
-  font-size: .95em;
-  opacity: .6;
   overflow-wrap: break-word;
+  font-size:.98em;
+  opacity: .7;
 }
 
 kbd {
   box-shadow:0 .5px 1px;
   border-radius:2px;
   padding:.1em .325em .075em .325em;
-  font-size:.95em;
   margin: 0 .1em;
 }
 
 pre {
-  line-height: 1.55;
   overflow: auto;
   padding: .5em .85em .6em .85em;
   background: rgba(0,0,0,.025);  

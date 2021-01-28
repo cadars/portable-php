@@ -52,8 +52,8 @@ foreach ($files as $file) {
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
   $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.$filename_no_ext.'">'.$filename_no_ext.'</time></li>';
-  $posts .= '<section role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
-  $about = '<section id="about" role="document" aria-label="About">'.$parsedown->text(file_get_contents('content/_extra/about.md')).'</section>';
+  $posts .= '<section tabindex="0" role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
+  $about = '<section tabindex="0" role="document" aria-label="About" id="about">'.$parsedown->text(file_get_contents('content/_extra/about.md')).'</section>';
 }
 ?>
 <!doctype html>
@@ -80,7 +80,7 @@ foreach ($files as $file) {
     </h1>
   </header>
   <main>
-    <section id="top">
+    <section tabindex="0" id="top">
       <nav>
         <ul class="toc">
           <?php echo $toc; ?>
@@ -89,7 +89,7 @@ foreach ($files as $file) {
     </section>
     <?php echo $about; ?>
     <?php echo $posts; ?>
-    <section id="home" role="document" aria-label="Home">
+    <section tabindex="0" role="document" aria-label="Home" id="home">
       <nav>
         <ul class="toc">
           <?php echo $toc; ?>
