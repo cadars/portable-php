@@ -5,8 +5,7 @@
   
   --text-color: #000;
   --back-color: #fff;
-  --link-color: blue;
-  
+  --link-color: blue; 
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -337,12 +336,7 @@ a.footnote-backref {
   
   section {
     height: auto;
-    width: auto;
-    clip: inherit; 
-    clip-path: none;
-    overflow: auto;
-    position: relative;
-    white-space: inherit;
+    overflow: visible;
     
     page-break-after: always;
     page-break-inside: avoid;
