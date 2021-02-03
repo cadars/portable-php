@@ -257,7 +257,7 @@ sup {
 }
 
 code, kbd {
-  font-family: ui-monospace, "SF Mono", Menlo, Andale Mono, monospace;
+  font-family: ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;
   overflow-wrap: break-word;
   font-size:.98em;
   opacity: .7;
