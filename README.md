@@ -24,3 +24,5 @@ php portable.php > index.html
 - [ParsedownExtraPlugin](https://github.com/taufik-nurrohman/parsedown-extra-plugin) adds the `loading="lazy"` attribute to images, proper figure and figcaption elements, and more. Can be used for [code highlighting](https://github.com/taufik-nurrohman/parsedown-extra-plugin#custom-code-block-contents).
 
 </details>
+
+Extra: [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c)
