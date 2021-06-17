@@ -53,7 +53,7 @@ section * + * {
 /* Header */
 
 header {
-  padding: 5vw 4vw 0 4vw;
+  padding: 5vw 4vw 0;
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -62,7 +62,7 @@ header {
 /* Footer */
 
 footer {
-  padding: 0 4vw 5vw 4vw;
+  padding: 0 4vw 5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -142,6 +142,7 @@ a {
 }
 
 a[href*="//"]:after, a[href^="mailto:"]:after {
+  display: inline-block;
   font-size: .8em;
   content: "\2197"; /* top right arrow: ↗ */
 }
@@ -259,7 +260,7 @@ sup {
 code, kbd {
   font-family: ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;
   overflow-wrap: break-word;
-  font-size:.98em;
+  font-size:.96em;
   opacity: .7;
 }
 
@@ -365,8 +366,9 @@ a.footnote-backref {
   blockquote, figure {padding-left: 4vw;padding-right: 4vw;}
   ul.toc li + li {margin:0;}
   ul.toc li a {padding-bottom:.6em;}
+  ul.toc li a:after {padding-bottom:.95em;}
   ul.toc li a:active {font-weight: bold;}
-  footer small:first-of-type, ul.toc li a:after, ul.toc time {
+  footer small:first-of-type, ul.toc time {
     left: -1000vw;
     height: 0;
     overflow: hidden;
