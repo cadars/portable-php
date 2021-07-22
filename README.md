@@ -1,4 +1,4 @@
-Generate a single HTML document from Markdown files.<br>
+Generate a single HTML document with “pseudo pages” from Markdown files.<br>
 **Demo:** https://cadars.github.io/portable-php/
 
 **Requirements:** PHP
