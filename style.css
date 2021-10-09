@@ -3,15 +3,20 @@
   padding: 0;
   box-sizing: border-box;  
   
-  --text-color: #000;
+  --text-color: #111;
+  --text-color-light: #6a6a6a;
+  --text-color-pale: #ddddda;
   --back-color: #fff;
-  --link-color: blue; 
+  --link-color: tomato; 
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   * {
-    --text-color: #fff;
-    --back-color: #000;
+    --text-color: #ddddda;
+    --text-color-light: #888;
+    --text-color-pale: #000;
+    --back-color: #1c1c1a;
+    --link-color: gold; 
   }
 }
 
@@ -83,6 +88,7 @@ ul.toc * + * {
 }
 
 ul.toc li {
+  color: var(--text-color-light);
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -94,7 +100,7 @@ ul.toc li + li {
 }
 
 ul.toc li a {
-  color: currentColor;
+  color: var(--text-color);
   flex: 1;
 }
 
@@ -104,13 +110,13 @@ ul.toc li a:hover {
 
 ul.toc li a span {
   background: var(--back-color);
-  padding-right: .3em;
+  padding-inline-end: .3em;
 }
 
 ul.toc li time {
   font-variant-numeric: tabular-nums;
   z-index: 1;
-  padding-left:.3em;
+  padding-inline-start:.3em;
   background: var(--back-color);
 }
 
@@ -134,11 +140,14 @@ ul.toc li a:after {
 a {
   color: var(--link-color);
   text-decoration: none;
+  text-underline-offset: 1px;
   overflow-wrap: break-word;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  a:hover {text-decoration: underline;}
+  a:hover {
+    text-decoration: underline;  
+  }
 }
 
 a[href*="//"]:after, a[href^="mailto:"]:after {
@@ -155,7 +164,7 @@ header h1 a {
 }
 
 section h1 {
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
 }
 
 h1, h2, h3, h4, strong, b, dt {
@@ -177,11 +186,11 @@ h3 {
 /* Lists */
 
 li, dd {
-  margin-left: 1.25em;
+  margin-inline-start: 1.25em;
 }
 
 li + li, li ol, li ul {
-  margin-top: .1em;
+  margin-top: .25em;
 }
 
 .footnotes li {
@@ -197,6 +206,8 @@ img {
   min-height:4em;
   height: auto;
   position: relative;
+  margin: 0 auto;
+  box-shadow: 0 .05em .4em var(--text-color-pale);
 }
 
 img:after { /* style offline images */
@@ -211,16 +222,22 @@ img:after { /* style offline images */
   height: 100%;
   font-size: .865em;
   text-align: center;
-  border:1px dashed;
+  border:1px dashed var(--text-color-light);
   background-color: var(--back-color);
 }
 
 figure {
-  padding: 1em;
+  padding: 1.6em 1.2em;
 }
 
 figcaption {
-  opacity: .6;
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+figcaption a {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 figcaption, small, .footnotes {
@@ -230,8 +247,9 @@ figcaption, small, .footnotes {
 /* Other elements */
 
 blockquote {
-  padding-left: 1em;
-  border-left:1px dotted;
+  font-family: Georgia, serif;
+  color: var(--text-color-light);
+  padding: .8em 1.2em;
 }
 
 abbr[title] {
@@ -261,7 +279,7 @@ code, kbd {
   font-family: ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;
   overflow-wrap: break-word;
   font-size:.96em;
-  opacity: .7;
+  color: var(--text-color-light);
 }
 
 kbd {
@@ -292,24 +310,26 @@ pre code:after {
   top: -.3em;
   text-transform: uppercase;
   font-size: .7em;
-  opacity:.6;
+  color: var(--text-color-light);
 }
 
 /* Tables */
 
 table {
   border-collapse: collapse;
+  font-size: .95em;
   width: 100%;
-  margin: 1em 0;
+  margin: 1.4em 0;
 }
 
-thead {
-  text-align: left;
+thead th {
+  text-align: start;
   border-bottom: 1px solid;
 }
 
 th, td {
-  padding: .4em .3em .2em;
+  padding: .4em .4em .3em;
+  border: 1px dotted var(--text-color-pale);
 }
 
 /* Disable footnotes #links */
@@ -363,7 +383,7 @@ a.footnote-backref {
   
   body {font-size: 16px;}
   footer small {font-size: 1em;}
-  blockquote, figure {padding-left: 4vw;padding-right: 4vw;}
+  blockquote, figure {padding-inline-start: 4vw;padding-inline-end: 4vw;}
   ul.toc li + li {margin:0;}
   ul.toc li a {padding-bottom:.6em;}
   ul.toc li a:after {padding-bottom:.95em;}
