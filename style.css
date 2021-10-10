@@ -13,7 +13,7 @@
 @media only screen and (prefers-color-scheme: dark) {
   * {
     --text-color: #ddddda;
-    --text-color-light: #888;
+    --text-color-light: #8c8c8a;
     --text-color-pale: #000;
     --back-color: #1c1c1a;
     --link-color: gold; 
@@ -71,6 +71,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color: var(--text-color-light);
 }
 
 footer * + * {
