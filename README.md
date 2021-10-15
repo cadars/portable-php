@@ -1,6 +1,5 @@
+Get a single HTML document from a collection of Markdown files.\
 Demo: https://cadars.github.io/portable-php/
-
-Get a single HTML document from a collection of Markdown files, and add a basic RSS feed with the help of [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c).
 
 **Requirements:** PHP
 
@@ -11,9 +10,13 @@ Get a single HTML document from a collection of Markdown files, and add a basic 
 
 Or from the command-line:
 
-```
+```shell
 php portable.php > index.html
 ```
+
+
+Extra: download [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c) to generate a basic RSS feed.
+
 
 <details>
 <summary>Included dependencies</summary>
