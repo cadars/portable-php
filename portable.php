@@ -34,8 +34,9 @@ foreach ($files as $file) {
   $filename_no_ext = substr($file, 0, strrpos($file, "."));    
   $file_path = __DIR__.'/content/'.$file;
   $file = fopen($file_path, 'r');
+  $post_date = date("M j Y", strtotime($filename_no_ext));
   $post_title = trim(fgets($file),'#');
-  $post_slug = create_slug($filename_no_ext.$post_title);
+  $post_slug = create_slug($post_title.$filename_no_ext);
   fclose($file);
     
   $parsedown = new ParsedownExtraPlugin();
@@ -51,7 +52,7 @@ foreach ($files as $file) {
   $parsedown->footnoteBackLinkAttributes = function() {return ['href' => '#'];};
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
-  $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.$filename_no_ext.'">'.$filename_no_ext.'</time></li>';
+  $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.$filename_no_ext.'">'.$post_date.'</time></li>';
   $posts .= '<section tabindex="0" role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
   $about = '<section tabindex="0" role="document" aria-label="About" id="about">'.$parsedown->text(file_get_contents('content/_extra/about.md')).'</section>';
 }
