@@ -7,13 +7,13 @@
   --text-color-light: #7a7a7a;
   --text-color-pale: #ddddda;
   --back-color: #fff;
-  --link-color: tomato; 
+  --link-color: #d83c00; 
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   * {
-    --text-color: #ddddda;
-    --text-color-light: #8c8c8a;
+    --text-color: #eeeeea;
+    --text-color-light: #acacaa;
     --text-color-pale: #000;
     --back-color: #1c1c1a;
     --link-color: gold; 
@@ -40,7 +40,7 @@ section, section:target ~ section:last-of-type {
 section:target, section:last-of-type {
   height: auto;
   overflow: visible;
-  padding: calc(5vw + 3.4em) 4vw 2.1em;
+  padding: calc(4vw + 3.4em) 4vw 2.1em;
 }
 
 /* tabindex="0" */
@@ -58,7 +58,7 @@ section * + * {
 /* Header */
 
 header {
-  padding: 5vw 4vw 0;
+  padding: 4vw 4vw 0;
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -103,10 +103,6 @@ ul.toc li + li {
 ul.toc li a {
   color: var(--text-color);
   flex: 1;
-}
-
-ul.toc li a:hover {
-  color: var(--link-color);
 }
 
 ul.toc li a span {
@@ -319,7 +315,7 @@ pre code:after {
 
 table {
   border-collapse: collapse;
-  font-size: .95em;
+  font-size: .9em;
   width: 100%;
   margin: 1.4em 0;
 }
@@ -330,7 +326,7 @@ thead th {
 }
 
 th, td {
-  padding: .4em .4em .3em;
+  padding: .4em .6em;
   border: 1px dotted var(--text-color-pale);
 }
 
@@ -349,16 +345,16 @@ a.footnote-backref {
 
 @media only screen and (max-width: 400px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
   footer small {
     font-size: 1em;
   }
   blockquote, figure {
-    padding-inline:4vw;
+    padding:1em 0;
   }
   ul.toc li + li {
-    margin-top:.5em;
+    margin-top:.4em;
   }
   footer small:first-of-type {
     left: -1000vw;
