@@ -25,7 +25,7 @@ body {
   color: var(--text-color);
   background: var(--back-color);
   position: relative;
-  max-width: 40em; /* column width */
+  max-width: 42em; /* column width */
   margin: 0 auto;
 }
 
