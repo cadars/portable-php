@@ -250,6 +250,7 @@ figcaption, small, .footnotes {
 
 blockquote {
   font-family: "Iowan Old Style", Constantia, Georgia, serif;
+  font-variant-numeric: oldstyle-nums;
   padding: .4em 1.2em;
 }
 
