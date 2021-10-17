@@ -77,11 +77,11 @@ foreach ($files as $file) {
 <body>
   <header>
     <h1>
-      <a href="#top"><?php echo $site_title; ?></a>
+      <a href="#_"><?php echo $site_title; ?></a>
     </h1>
   </header>
   <main>
-    <section tabindex="0" id="top">
+    <section tabindex="0">
       <nav>
         <ul class="toc">
           <?php echo $toc; ?>
