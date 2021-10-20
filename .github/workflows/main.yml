@@ -1,0 +1,14 @@
+name: RUN
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: nanasess/setup-php@master
+      with:
+        php-version: '7.4'
+    - run: php ./portable.php > index.html
