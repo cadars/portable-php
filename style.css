@@ -344,7 +344,6 @@ a.footnote-backref {
 @media only screen and (max-width: 500px) {
   body {
     font-size: 16px;
-    
   }
   footer small {
     font-size: 1em;
@@ -369,9 +368,6 @@ a.footnote-backref {
   * {
     --back-color: #fff;
   } 
-  header {
-    position: relative;
-  }
   section {
     height: auto;
     overflow: visible;
@@ -380,7 +376,7 @@ a.footnote-backref {
     page-break-inside: avoid;
     break-inside: avoid;
     display: block;
-    padding: 2em 4vw;
+    padding: 2em 0;
   }
   section * {
     page-break-inside: avoid;
