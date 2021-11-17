@@ -24,8 +24,11 @@ body {
   font: 18.5px / 1.5 system-ui, "Segoe UI", sans-serif;
   color: var(--text-color);
   background: var(--back-color);
-  position: relative;
-  max-width: 42em; /* column width */
+  padding: 5vw 4vw;
+}
+
+body > * {
+  max-width: 36em; /* column width */
   margin:0 auto;
 }
 
@@ -40,7 +43,7 @@ section, section:target ~ section:last-of-type {
 section:target, section:last-of-type {
   height: auto;
   overflow: visible;
-  padding: calc(5vw + 3.3em) 4vw 2.1em;
+  scroll-margin-top: 100vw;
 }
 
 /* tabindex="0" */
@@ -55,28 +58,22 @@ section * + * {
   margin-top: .9em;
 }
 
-/* Header */
+/* Main */
 
-header {
-  padding: 5vw 4vw 0;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
+main {
+  padding-top: 1.8em;
+  padding-bottom: 2.1em;
 }
 
 /* Footer */
 
 footer {
-  padding: 0 4vw 5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   color: var(--text-color-light);
 }
 
-footer * + * {
-  margin-top: 0;
-}
 
 /* Table of contents */
 
