@@ -43,7 +43,7 @@ section, section:target ~ section:last-of-type {
 section:target, section:last-of-type {
   height: auto;
   overflow: visible;
-  scroll-margin-top: 100vw;
+  scroll-margin-top: 100vh;
 }
 
 /* tabindex="0" */
