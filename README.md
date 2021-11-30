@@ -10,7 +10,7 @@ Demo: https://cadars.github.io/portable-php/
 
 Or from the command-line:
 
-```shell
+```
 php portable.php > index.html
 ```
 
