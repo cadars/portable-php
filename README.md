@@ -1,5 +1,5 @@
 Get a single HTML document from a collection of Markdown files.\
-Demo: https://cadars.github.io/portable-php/
+**Demo**: https://cadars.github.io/portable-php/
 
 **Requirements:** PHP
 
@@ -15,7 +15,7 @@ php portable.php > index.html
 ```
 
 
-Extra: download [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c) to generate a basic RSS feed.
+Extra: generate a RSS feed with [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c).
 
 
 <details>
