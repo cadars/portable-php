@@ -15,7 +15,7 @@ php portable.php > index.html
 ```
 
 
-Extra: generate a RSS feed with [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c).
+Extra: generate a basic RSS feed with [portable-feed.php](https://gist.github.com/cadars/c1c2d4bad67e176ef833511385bc888c).
 
 
 <details>
