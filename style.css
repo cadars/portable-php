@@ -35,14 +35,12 @@ body > * {
 /* Show & hide sections */
 
 section, section:target ~ section:last-of-type {
-  height: 0;
-  overflow: hidden;
+  display: none;
   padding: 0;
 }
 
 section:target, section:last-of-type {
-  height: auto;
-  overflow: visible;
+  display: block;
   scroll-margin-top: 100vh;
 }
 
@@ -368,10 +366,7 @@ a.footnote-backref {
   * {
     --back-color: #fff;
   } 
-  section {
-    height: auto;
-    overflow: visible;
-    
+  section {    
     page-break-after: always;
     page-break-inside: avoid;
     break-inside: avoid;

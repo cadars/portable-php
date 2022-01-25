@@ -81,7 +81,7 @@ foreach ($files as $file) {
     </h1>
   </header>
   <main>
-    <section tabindex="0">
+    <section>
       <nav>
         <ul class="toc">
           <?php echo $toc; ?>
@@ -90,7 +90,7 @@ foreach ($files as $file) {
     </section>
     <?php echo $about; ?>
     <?php echo $posts; ?>
-    <section tabindex="0" role="document" aria-label="Home" id="home">
+    <section id="home">
       <nav>
         <ul class="toc">
           <?php echo $toc; ?>
