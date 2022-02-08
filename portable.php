@@ -29,12 +29,15 @@ foreach (new DirectoryIterator(__DIR__.'/content/') as $file) {
 }
 rsort($files);
 
+$toc = '';
+$posts = '';
+
 foreach ($files as $file) {
 
-  $filename_no_ext = substr($file, 0, strrpos($file, "."));    
+  $filename_no_ext = substr($file, 0, strrpos($file, '.'));    
   $file_path = __DIR__.'/content/'.$file;
   $file = fopen($file_path, 'r');
-  $post_date = date("M j Y", strtotime($filename_no_ext));
+  $post_date = date('M j Y', strtotime($filename_no_ext));
   $post_title = trim(fgets($file),'#');
   $post_slug = create_slug($post_title.$filename_no_ext);
   fclose($file);
