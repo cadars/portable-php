@@ -28,7 +28,7 @@ body {
 }
 
 body > * {
-  max-width: 36em; /* column width */
+  max-width: 34em; /* column width */
   margin:0 auto;
 }
 
@@ -106,6 +106,7 @@ ul.toc li a span {
 }
 
 ul.toc li time {
+  order: 1;
   white-space:nowrap;
   z-index: 1;
   padding-inline-start:.3em;

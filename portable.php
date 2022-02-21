@@ -55,7 +55,7 @@ foreach ($files as $file) {
   $parsedown->footnoteBackLinkAttributes = function() {return ['href' => '#'];};
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
-  $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.$filename_no_ext.'">'.$post_date.'</time></li>';
+  $toc .= '<li><time datetime="'.$filename_no_ext.'">'.$post_date.'</time> <a href="#'.$post_slug.'"><span>'.$post_title.'</span></a></li>';
   $posts .= '<section tabindex="0" role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
   $about = '<section tabindex="0" role="document" aria-label="About" id="about">'.$parsedown->text(file_get_contents('content/_extra/about.md')).'</section>';
 }
