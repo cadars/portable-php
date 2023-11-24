@@ -30,11 +30,21 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: setup git username
+        run: git config --global user.name "Github Actions Bot"
+      - name: setup git email
+        run: git config --global user.email "githubactions@github.com"
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+      - name: Generate index.html from portable.php
+        run: php portable.php > index.html
+      - name: Add index.html, style.css, and new markdown files to git
+        run: git add index.html style.css && git ls-files -o --exclude-standard | xargs -n1 git add
+      - name: Commit index.html, style.css, and new markdown files
+        run: git commit -m "Generated index.html from portable.php, updated style.css, and added new markdown files"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
