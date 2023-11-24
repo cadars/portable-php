@@ -27,17 +27,17 @@ jobs:
         run: git config --global user.name "Github Actions Bot"
       - name: Set Git user email
         run: git config --global user.email "githubactions@example.com"
+      - name: Generate index.html from portable.php
+        run: php portable.php > index.html
+      - name: Add index.html, style.css, and new markdown files to git
+        run: git add -A
+      - name: Commit changes
+        run: git commit -m "Generated new artifacts"
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-      - name: Generate index.html from portable.php
-        run: php portable.php > index.html
-      - name: Add index.html, style.css, and new markdown files to git
-        run: git add index.html style.css && git ls-files -o --exclude-standard | xargs -n1 git add
-      - name: Commit index.html, style.css, and new markdown files
-        run: git commit -m "Generated index.html from portable.php, updated style.css, and added new markdown files"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
   deploy:
