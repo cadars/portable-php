@@ -2,8 +2,8 @@
 // portable-php v.0.1
 // Render each of the Markdown files from a folder in a <section>, with date-and-title as #id.
 
-$site_title = 'This is the website title';
-$site_desc = 'This is the website description';
+$site_title = 'Portable Website';
+$site_desc = 'Website is portable';
 $site_style = 'style.css';
 $site_icon = 'img/icon.png';
 
